@@ -46,6 +46,7 @@ class ArticleController extends BaseController
      */
     public function show($id)
     {
-        return View::make('articles.article_show');
+        $article = $this->article_model->getById($id);
+        return View::make('articles.article_show')->with(compact('article'));
     }
 }

@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1381507534">
-  <project timestamp="1381507534">
+<coverage generated="1381517465">
+  <project timestamp="1381517465">
     <package name="SpinMedia\ExampleBlog\Articles">
       <file name="/Library/WebServer/Documents/example_blog/app/src/SpinMedia/ExampleBlog/Articles/Article.php">
         <class name="Article" namespace="SpinMedia\ExampleBlog\Articles">
-          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+          <metrics methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="6" coveredelements="6"/>
         </class>
+        <line num="0" type="stmt" count="1"/>
         <line num="23" type="method" name="getAll" crap="1" count="1"/>
         <line num="25" type="stmt" count="1"/>
-        <line num="28" type="stmt" count="1"/>
-        <metrics loc="27" ncloc="13" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+        <line num="34" type="method" name="getById" crap="1" count="1"/>
+        <line num="36" type="stmt" count="1"/>
+        <line num="44" type="method" name="comments" crap="1" count="1"/>
+        <line num="46" type="stmt" count="1"/>
+        <line num="49" type="stmt" count="1"/>
+        <metrics loc="48" ncloc="23" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="6" coveredelements="6"/>
       </file>
       <file name="/Library/WebServer/Documents/example_blog/app/src/SpinMedia/ExampleBlog/Articles/ArticleController.php">
         <class name="ArticleController" namespace="SpinMedia\ExampleBlog\Articles">
-          <metrics methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
+          <metrics methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="9" coveredelements="9"/>
         </class>
         <line num="25" type="method" name="__construct" crap="1" count="2"/>
         <line num="27" type="stmt" count="2"/>
@@ -23,10 +28,35 @@
         <line num="38" type="stmt" count="1"/>
         <line num="47" type="method" name="show" crap="1" count="1"/>
         <line num="49" type="stmt" count="1"/>
-        <line num="52" type="stmt" count="1"/>
-        <metrics loc="51" ncloc="26" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
+        <line num="50" type="stmt" count="1"/>
+        <line num="53" type="stmt" count="1"/>
+        <metrics loc="52" ncloc="27" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="9" coveredelements="9"/>
       </file>
     </package>
-    <metrics files="2" loc="78" ncloc="39" classes="2" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="10" coveredelements="10"/>
+    <package name="SpinMedia\ExampleBlog\Comments">
+      <file name="/Library/WebServer/Documents/example_blog/app/src/SpinMedia/ExampleBlog/Comments/Comment.php">
+        <class name="Comment" namespace="SpinMedia\ExampleBlog\Comments">
+          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+        </class>
+        <line num="24" type="method" name="store" crap="1" count="1"/>
+        <line num="26" type="stmt" count="1"/>
+        <line num="29" type="stmt" count="1"/>
+        <metrics loc="28" ncloc="13" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      </file>
+      <file name="/Library/WebServer/Documents/example_blog/app/src/SpinMedia/ExampleBlog/Comments/CommentController.php">
+        <class name="CommentController" namespace="SpinMedia\ExampleBlog\Comments">
+          <metrics methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
+        </class>
+        <line num="26" type="method" name="__construct" crap="1" count="1"/>
+        <line num="28" type="stmt" count="1"/>
+        <line num="29" type="stmt" count="1"/>
+        <line num="36" type="method" name="store" crap="1" count="1"/>
+        <line num="39" type="stmt" count="1"/>
+        <line num="40" type="stmt" count="1"/>
+        <line num="43" type="stmt" count="1"/>
+        <metrics loc="42" ncloc="21" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
+      </file>
+    </package>
+    <metrics files="4" loc="170" ncloc="84" classes="4" methods="9" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="23" coveredelements="23"/>
   </project>
 </coverage>

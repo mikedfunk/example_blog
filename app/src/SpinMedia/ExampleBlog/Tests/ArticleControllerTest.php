@@ -57,6 +57,20 @@ class ArticleControllerTest extends ExampleBlogTestCase
      */
     public function testShowOk()
     {
+        // generate dummy article data
+        $article = new ArticleModel;
+        $article->title = 'test';
+        $article->content = 'test';
+        $article->id = 1;
+        $article->comments = [];
+
+        // generate mock, bind in IoC
+        $article_mock = Mockery::mock('SpinMedia\\ExampleBlog\\Articles\\Article');
+        $article_mock->shouldReceive('getById')
+            ->once()
+            ->andReturn($article);
+        App::instance('SpinMedia\\ExampleBlog\\Articles\\Article', $article_mock);
+
         // call and assert
         $this->call('GET', 'articles/1');
         $this->assertResponseOk();

@@ -28,3 +28,11 @@ Route::get(
     ]
 );
 
+Route::post(
+    'comments',
+    [
+        'as' => 'comments.store',
+        'uses' => 'SpinMedia\\ExampleBlog\\Comments\\CommentController@store'
+    ]
+);
+

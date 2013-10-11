@@ -24,4 +24,25 @@ class Article extends Eloquent
     {
         return static::paginate(5);
     }
+
+    /**
+     * getById
+     *
+     * @param int $id
+     * @return Article
+     */
+    public function getById($id)
+    {
+        return static::find($id);
+    }
+
+    /**
+     * comments
+     *
+     * @return void
+     */
+    public function comments()
+    {
+        return $this->hasMany('SpinMedia\\ExampleBlog\\Comments\\Comment');
+    }
 }

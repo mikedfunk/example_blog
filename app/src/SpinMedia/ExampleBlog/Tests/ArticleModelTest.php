@@ -45,4 +45,19 @@ class ArticleModelTest extends ExampleBlogTestCase
         $this->article_model = new ArticleModel;
         $this->assertEquals(5, count($this->article_model->getAll()));
     }
+
+    /**
+     * testGetById
+     *
+     * @return void
+     */
+    public function testGetById()
+    {
+        // ensure the title is as expected
+        $article = $this->article_model->getById(1);
+        $this->assertEquals('test1', $article->title);
+
+        // ensure that comments are set
+        $this->assertGreaterThan(0, count($article->comments));
+    }
 }

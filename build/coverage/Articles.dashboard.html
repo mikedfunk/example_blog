@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>Dashboard for /Library/WebServer/Documents/example_blog/app/src/SpinMedia/ExampleBlog</title>
+  <title>Dashboard for /Library/WebServer/Documents/example_blog/app/src/SpinMedia/ExampleBlog/Articles</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -17,7 +17,8 @@
     <div class="row">
      <div class="span12">
       <ul class="breadcrumb">
-        <li><a href="index.html">/Library/WebServer/Documents/example_blog/app/src/SpinMedia/ExampleBlog</a></li>
+        <li><a href="index.html">/Library/WebServer/Documents/example_blog/app/src/SpinMedia/ExampleBlog</a> <span class="divider">/</span></li>
+        <li><a href="Articles.html">Articles</a></li>
         <li class="active">(Dashboard)</li>
 
       </ul>
@@ -83,7 +84,7 @@ $(document).ready(function() {
    min: 0
   },
   series: [{
-   data: [0,0,0,0,0,0,0,0,0,0,0,4]
+   data: [0,0,0,0,0,0,0,0,0,0,0,2]
   }],
  });
 
@@ -111,7 +112,7 @@ $(document).ready(function() {
    }
   },
   series: [{
-   data: [[100,3,"<a href=\"Articles_Article.php.html#15\">Article<\/a>"],[100,3,"<a href=\"Articles_ArticleController.php.html#17\">ArticleController<\/a>"],[100,1,"<a href=\"Comments_Comment.php.html#15\">Comment<\/a>"],[100,2,"<a href=\"Comments_CommentController.php.html#18\">CommentController<\/a>"]],
+   data: [[100,3,"<a href=\"Articles_Article.php.html#15\">Article<\/a>"],[100,3,"<a href=\"Articles_ArticleController.php.html#17\">ArticleController<\/a>"]],
    marker: {
     symbol: 'diamond'
    }
