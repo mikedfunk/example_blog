@@ -6,7 +6,10 @@
 <hr>
 <h3>Comments</h3>
 
-<div class="error"><strong>{{ $errors->first() }}</strong></div>
+@if($errors->any())
+<div class="alert alert-warning"><strong>{{ $errors->first() }}</strong></div>
+@endif
+
 @if($article->comments)
 @foreach($article->comments as $comment)
 <p>{{ $comment->content }}</p>
