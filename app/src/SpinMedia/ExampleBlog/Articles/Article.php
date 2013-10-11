@@ -16,6 +16,14 @@ class Article extends Eloquent
 {
 
     /**
+     * @var fillable
+     */
+    protected $fillable = array(
+        'title',
+        'content',
+    );
+
+    /**
      * getAll
      *
      * @return Collection

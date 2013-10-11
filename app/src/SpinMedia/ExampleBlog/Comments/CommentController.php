@@ -5,10 +5,12 @@
  */
 namespace SpinMedia\ExampleBlog\Comments;
 
+use Log;
 use BaseController;
 use Redirect;
 use Input;
 use SpinMedia\ExampleBlog\Comments\Comment as CommentModel;
+use Validator;
 
 /**
  * CommentController
@@ -35,7 +37,17 @@ class CommentController extends BaseController
      */
     public function store()
     {
+        // validate
+        $validator = Validator::make(Input::all(), CommentModel::$rules);
+        if ($validator->fails()) {
+            Log::warning('validation failed');
+            return Redirect::route('articles.show', Input::get('article_id'))
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         // store and redirect
+        Log::info('validation succeeded');
         $this->comment_model->store(Input::all());
         return Redirect::route('articles.index');
     }

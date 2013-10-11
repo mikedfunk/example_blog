@@ -16,6 +16,24 @@ class Comment extends Eloquent
 {
 
     /**
+     * @var fillable
+     */
+    protected $fillable = array(
+        'content',
+        'email',
+        'article_id',
+    );
+
+    /**
+     * @var validation rules
+     */
+    static $rules = array(
+        'content' => 'required',
+        'email' => 'required|email',
+    );
+
+
+    /**
      * store
      *
      * @param array $values
