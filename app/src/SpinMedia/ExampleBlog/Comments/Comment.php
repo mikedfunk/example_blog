@@ -27,7 +27,7 @@ class Comment extends Eloquent
     /**
      * @var validation rules
      */
-    static $rules = array(
+    public static $rules = array(
         'content' => 'required',
         'email' => 'required|email',
     );
