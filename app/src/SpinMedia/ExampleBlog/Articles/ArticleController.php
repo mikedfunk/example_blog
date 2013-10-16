@@ -7,7 +7,8 @@ namespace SpinMedia\ExampleBlog\Articles;
 
 use BaseController;
 use View;
-use SpinMedia\ExampleBlog\Articles\Article as ArticleModel;
+use SpinMedia\ExampleBlog\Interfaces\ArticleInterface;
+use SpinMedia\ExampleBlog\Articles\ArticleFacade as ArticleModel;
 
 /**
  * ArticleController
@@ -22,7 +23,7 @@ class ArticleController extends BaseController
      *
      * @return void
      */
-    public function __construct(ArticleModel $article_model)
+    public function __construct(ArticleInterface $article_model)
     {
         $this->article_model = $article_model;
     }
@@ -34,7 +35,8 @@ class ArticleController extends BaseController
      */
     public function index()
     {
-        $articles = $this->article_model->getAll();
+        // $articles = $this->article_model->getAll();
+        $articles = ArticleModel::getAll();
         return View::make('articles.article_index', compact('articles'));
     }
 
@@ -46,7 +48,8 @@ class ArticleController extends BaseController
      */
     public function show($id)
     {
-        $article = $this->article_model->getById($id);
+        // $article = $this->article_model->getById($id);
+        $article = ArticleModel::getById($id);
         return View::make('articles.article_show')->with(compact('article'));
     }
 }

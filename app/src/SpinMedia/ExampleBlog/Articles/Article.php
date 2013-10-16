@@ -5,6 +5,7 @@
  */
 namespace SpinMedia\ExampleBlog\Articles;
 
+use SpinMedia\ExampleBlog\Interfaces\ArticleInterface;
 use Eloquent;
 
 /**
@@ -12,7 +13,7 @@ use Eloquent;
  *
  * @author Michael Funk <mfunk@spinmedia.com>
  */
-class Article extends Eloquent
+class Article extends Eloquent implements ArticleInterface
 {
 
     /**

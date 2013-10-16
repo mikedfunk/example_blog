@@ -1,5 +1,11 @@
 <?php
 
+// dependency binding
+App::bind(
+    'SpinMedia\\ExampleBlog\\Interfaces\\ArticleInterface',
+    'SpinMedia\\ExampleBlog\\Articles\\Article'
+);
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -35,4 +41,3 @@ Route::post(
         'uses' => 'SpinMedia\\ExampleBlog\\Comments\\CommentController@store'
     ]
 );
-

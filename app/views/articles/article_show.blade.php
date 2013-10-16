@@ -29,7 +29,7 @@
 {{ Form::text('email') }}
 </p>
 <p>
-{{ Form::submit() }}
+{{ Form::submit('Add', ['class' => 'btn btn-primary']) }}
 </p>
 {{ Form::close() }}
 @stop

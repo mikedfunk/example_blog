@@ -6,7 +6,7 @@
 namespace SpinMedia\ExampleBlog\Tests;
 
 use SpinMedia\ExampleBlog\Tests\ExampleBlogTestCase;
-use SpinMedia\ExampleBlog\Articles\Article as ArticleModel;
+use SpinMedia\ExampleBlog\Articles\ArticleFacade as ArticleModel;
 use Mockery;
 use App;
 use Illuminate\Support\Collection;
@@ -39,11 +39,14 @@ class ArticleControllerTest extends ExampleBlogTestCase
         $collection[] = $article;
 
         // generate mock, bind in IoC
-        $article_mock = Mockery::mock('SpinMedia\\ExampleBlog\\Articles\\Article');
-        $article_mock->shouldReceive('getAll')
+        // $article_mock = Mockery::mock('SpinMedia\\ExampleBlog\\Articles\\Article');
+        // $article_mock->shouldReceive('getAll')
+            // ->once()
+            // ->andReturn($collection);
+        // App::instance('SpinMedia\\ExampleBlog\\Articles\\Article', $article_mock);
+        ArticleModel::shouldReceive('getAll')
             ->once()
             ->andReturn($collection);
-        App::instance('SpinMedia\\ExampleBlog\\Articles\\Article', $article_mock);
 
         // ensure that the article http response is ok
         $this->call('GET', 'articles');
@@ -65,11 +68,14 @@ class ArticleControllerTest extends ExampleBlogTestCase
         $article->comments = [];
 
         // generate mock, bind in IoC
-        $article_mock = Mockery::mock('SpinMedia\\ExampleBlog\\Articles\\Article');
-        $article_mock->shouldReceive('getById')
+        // $article_mock = Mockery::mock('SpinMedia\\ExampleBlog\\Interfaces\\ArticleInterface');
+        // $article_mock->shouldReceive('getById')
+            // ->once()
+            // ->andReturn($article);
+        // App::instance('SpinMedia\\ExampleBlog\\Interfaces\\ArticleInterface', $article_mock);
+        ArticleModel::shouldReceive('getById')
             ->once()
             ->andReturn($article);
-        App::instance('SpinMedia\\ExampleBlog\\Articles\\Article', $article_mock);
 
         // call and assert
         $this->call('GET', 'articles/1');
